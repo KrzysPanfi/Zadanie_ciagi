@@ -6,13 +6,13 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-       String filepath="Z:binarne.txt";
+       String filepath="C:\\Users\\PC\\Desktop\\prace szkolne\\binarne.txt";
        ArrayList<String> lista_binarna=Wczytaj_dane(filepath);
        for(String i:Zad1(lista_binarna)){
            System.out.println(i);
        }
-        for(int i:Zad2(lista_binarna)){
-            System.out.println(Integer.toString(i));
+        for(String i:Zad2(lista_binarna)){
+            System.out.println(i);
         }
 
     }
@@ -20,14 +20,14 @@ public class Main {
         ArrayList<String>Wynik=new ArrayList<String>();
         int najdluszy_dlugosc=0;
         String najdluszy="";
-        int count=0;
+        int ilosc_dwucyklicznych=0;
         String pierwszycykl;
         String drugicykl;
         for(String i:lista_binarna){
             pierwszycykl=i.substring(0,i.length()/2);
             drugicykl=i.substring(i.length()/2);
            if(pierwszycykl.equals(drugicykl)){
-               count++;
+               ilosc_dwucyklicznych++;
                if(i.length()>najdluszy_dlugosc){
                    najdluszy_dlugosc=i.length();
                    najdluszy=i;
@@ -36,31 +36,36 @@ public class Main {
 
                     }
                 }
-        Wynik.add(Integer.toString(count));
+        Wynik.add("Ilość slów dwucykliczncyh");
+        Wynik.add(Integer.toString(ilosc_dwucyklicznych));
+        Wynik.add("Największa długość");
         Wynik.add(Integer.toString(najdluszy_dlugosc));
+        Wynik.add("Najdluższe słowo");
         Wynik.add(najdluszy);
         return Wynik;
             }
 
 
-private static ArrayList<Integer> Zad2(ArrayList<String> lista_binarna){
-        ArrayList<Integer>Wynik=new ArrayList<Integer>();
-        int count=0;
+private static ArrayList<String> Zad2(ArrayList<String> lista_binarna){
+        ArrayList<String>Wynik1=new ArrayList<String>();
+        int ilosc_niepoprawnych=0;
+        String substringBCD;
         int najkrotsza_niepoprawna=Integer.MAX_VALUE;
         for(String i:lista_binarna){
-            String[]tablicabcd=i.split("(?<=\\G.{4})");
-            for(String num:tablicabcd){
-                if(Integer.parseInt(num)>1001){
-                    count++;
-                    if(najkrotsza_niepoprawna>i.length()){
-                        najkrotsza_niepoprawna=num.length();
-                    }
+            for (int a=0;a<i.length();a+=4){
+                substringBCD=i.substring(a,a+4);
+                if ((Integer.parseInt(substringBCD)>1001)) {
+                    ilosc_niepoprawnych++;
+                    if (najkrotsza_niepoprawna>i.length()) najkrotsza_niepoprawna=i.length();
+                    break;
                 }
             }
-        }
-        Wynik.add(count);
-        Wynik.add(najkrotsza_niepoprawna);
-        return Wynik;
+                    }
+        Wynik1.add("Niepoprawne_napisy:");
+        Wynik1.add(Integer.toString(ilosc_niepoprawnych));
+        Wynik1.add("Dlugość najkrótszego:");
+        Wynik1.add(Integer.toString(najkrotsza_niepoprawna));
+        return Wynik1;
 }
 
     private static ArrayList<String> Wczytaj_dane(String filePath) {
