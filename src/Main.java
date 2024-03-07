@@ -46,10 +46,10 @@ public class Main {
 private static ArrayList<Integer> Zad2(ArrayList<String> lista_binarna){
         ArrayList<Integer>Wynik=new ArrayList<Integer>();
         int count=0;
-        int najkrotsza_niepoprawna=0;
+        int najkrotsza_niepoprawna=Integer.MAX_VALUE;
         for(String i:lista_binarna){
-            String[]arr1=i.split("(?<=\\G.{4})");
-            for(String num:arr1){
+            String[]tablicabcd=i.split("(?<=\\G.{4})");
+            for(String num:tablicabcd){
                 if(Integer.parseInt(num)>1001){
                     count++;
                     if(najkrotsza_niepoprawna>i.length()){
