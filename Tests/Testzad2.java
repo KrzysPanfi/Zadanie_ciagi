@@ -12,16 +12,16 @@ public class Testzad2 {
         boolean wynik = true;
 
 
-        if (!(Main.Zad2(lista_binarna).get(1).equals(Integer.toString(359)))){
-            wynik=false;
+        if (!(Main.Zad2(lista_binarna).get(1).equals(Integer.toString(359)))) {
+            wynik = false;
         }
 
 
-        if(!(Main.Zad2(lista_binarna).get(3).equals(Integer.toString(4)))){
-            wynik=false;
+        if (!(Main.Zad2(lista_binarna).get(3).equals(Integer.toString(4)))) {
+            wynik = false;
         }
 
 
-        assertEquals(true, wynik);
+        assertTrue(wynik);
     }
 }

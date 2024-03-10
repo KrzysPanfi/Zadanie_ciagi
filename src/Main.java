@@ -40,7 +40,7 @@ public class Main {
 
             }
         }
-        Wynik.add("Ilość slów dwucykliczncyh:");
+        Wynik.add("Zad1: Ilość slów dwucykliczncyh:");
         Wynik.add(Integer.toString(ilosc_dwucyklicznych));
         Wynik.add("Największa długość:");
         Wynik.add(Integer.toString(najdluszy_dlugosc));
@@ -58,14 +58,14 @@ public class Main {
         for (String i : lista_binarna) {
             for (int a = 0; a < i.length(); a += 4) {
                 substringBCD = i.substring(a, a + 4);
-                if ((Integer.parseInt(substringBCD) > 1001)) {
+                if (Integer.parseInt(substringBCD) > 1001) {
                     ilosc_niepoprawnych++;
                     if (najkrotsza_niepoprawna > i.length()) najkrotsza_niepoprawna = i.length();
                     break;
                 }
             }
         }
-        Wynik1.add("Niepoprawne_napisy:");
+        Wynik1.add("Zad2: Niepoprawne_napisy:");
         Wynik1.add(Integer.toString(ilosc_niepoprawnych));
         Wynik1.add("Dlugość najkrótszego:");
         Wynik1.add(Integer.toString(najkrotsza_niepoprawna));
@@ -84,9 +84,9 @@ public class Main {
                 najwiekszabin=i;
             }
         }
-        Wynik2.add("Największa binarna");
+        Wynik2.add("Zad3: Największa binarna:");
         Wynik2.add(najwiekszabin);
-        Wynik2.add("Największa decymalna");
+        Wynik2.add("Największa decymalna:");
         Wynik2.add(najwieksza.toString(10));
         return Wynik2;
     }

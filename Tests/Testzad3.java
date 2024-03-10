@@ -12,15 +12,15 @@ public class Testzad3 {
         boolean wynik = true;
 
 
-        if (!(Float.parseFloat(Main.Zad3(lista_binarna).get(1))==1101011001100101F)){
-            wynik=false;
+        if (!(Float.parseFloat(Main.Zad3(lista_binarna).get(1)) == 1101011001100101F)) {
+            wynik = false;
         }
-        
-        if(!(Integer.parseInt(Main.Zad3(lista_binarna).get(3))==54885)){
-            wynik=false;
+
+        if (!(Integer.parseInt(Main.Zad3(lista_binarna).get(3)) == 54885)) {
+            wynik = false;
         }
 
 
         assertTrue(wynik);
     }
-    }
+}
